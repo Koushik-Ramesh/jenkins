@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    environment {
+    environment {                           # Pipleline Variables: All the stages of pipline can access and use it
         ENV_URL = "pipeline.google.com"
     }
     stages{
@@ -10,14 +10,18 @@ pipeline {
                         echo Hello World
                         echo Welcome to Jenklns
                         echo Environment URL is ${ENV_URL}
-                        
+
                     '''
             }
         }
 
         stage('Stage Two') {
+            environment {
+                Batch = "b55"
+            }
             steps {
                 sh "echo stage two demo"
+                sh "echo Training Batch is  ${Batch}"
             }
         }
 
