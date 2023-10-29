@@ -14,7 +14,7 @@ pipeline {
     }   
 
     stages{
-        stage('Parallel Demo')
+        stage('Parallel Demo') {
             parallel {
                 stage('Stage One') {
                     steps {
