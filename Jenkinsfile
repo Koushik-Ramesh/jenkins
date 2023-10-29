@@ -20,7 +20,7 @@ pipeline {
                         echo Hello World
                         echo Welcome to Jenklns
                         echo Environment URL is ${ENV_URL}
-                        mvn cleam
+                        mvn -v
 
                     '''
             }
