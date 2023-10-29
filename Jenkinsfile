@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''  
                     echo Hello World
-                    echo Welcome to Jenklns
+                    echo Welcome to Jenkins
                     echo Environment URL is ${ENV_URL}
                     mvn -v
 
