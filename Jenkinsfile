@@ -7,7 +7,12 @@ pipeline {
 
     triggers {
        pollSCM('*/59 * * * 1-5')                  //  cron('*/2 * * * 1-5')           // Cron is schedule timer to run the task regardless of changes
-    }                                                                               // pollSCM is also a scheduled timer but works only when changes occurs
+    }                                                                                 // pollSCM is also a scheduled timer but works only when changes occurs
+
+    tools {
+        maven 'maven-3.9.5'
+    }   
+
     stages{
         stage('Stage One') {
             steps {
