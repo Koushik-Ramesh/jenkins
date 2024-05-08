@@ -31,14 +31,14 @@ pipeline {
     //                 }
     //             }
 
-    //     stage('Destroying Network') {
-    //         steps {
-    //             dir('VPC') { git branch: 'main', url: 'https://github.com/Koushik-Ramesh/terraform-vpc.git'
-    //                     sh "terrafile -f env-${ENV}/Terrafile"
-    //                     sh "terraform init --backend-config=env-${ENV}/${ENV}-backend.tfvars  -reconfigure"
-    //                     sh "terraform destroy -var-file=env-${ENV}/${ENV}.tfvars -auto-approve"
-    //                 }
-    //             }
-    //         }
-    //     }    
-    // }                        
+        stage('Destroying Network') {
+            steps {
+                dir('VPC') { git branch: 'main', url: 'https://github.com/Koushik-Ramesh/terraform-vpc.git'
+                        sh "terrafile -f env-${ENV}/Terrafile"
+                        sh "terraform init --backend-config=env-${ENV}/${ENV}-backend.tfvars  -reconfigure"
+                        sh "terraform destroy -var-file=env-${ENV}/${ENV}.tfvars -auto-approve"
+                    }
+                }
+            }
+        }    
+    }                        
